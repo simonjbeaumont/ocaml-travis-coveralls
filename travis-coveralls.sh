@@ -3,9 +3,9 @@ set -e
 # Make sure we're not echoing any sensitive data
 set +x
 
-CONFIGURE=${COV_CONF:-echo "COV_CONF unset, assuming: <noop>"}
-BUILD=${COV_BUILD:-echo "COV_BUILD unset, assuming: make; make"}
-TEST=${COV_TEST:-echo "COV_TEST unset, assuming: make test; make test"}
+CONFIGURE=${COV_CONF:-'echo "COV_CONF unset, assuming: <noop>"'}
+BUILD=${COV_BUILD:-'echo "COV_BUILD unset, assuming: make"; make'}
+TEST=${COV_TEST:-'echo "COV_TEST unset, assuming: make test"; make test'}
 COVERAGE_DIR=.coverage/
 
 rm -rf $COVERAGE_DIR
