@@ -28,10 +28,10 @@ oasis setup
 
 eval ${CONFIGURE}
 eval ${BUILD}
-find . -name bisect* | xargs rm -f
+find . -name 'bisect*' | xargs rm -f
 eval ${TEST}
 
-find . -name bisect* -exec mv {} . \;
+find . -name 'bisect*' -exec mv {} . \;
 
 bisect-ppx-report bisect*.out -I _build -text report
 bisect-ppx-report bisect*.out -I _build -summary-only -text summary
