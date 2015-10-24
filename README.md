@@ -55,13 +55,18 @@ file "lib/ffi_generated.ml" [ regexp ".*" ];
 file "lib/ffi_generated_types.ml" [ regexp ".*" ];
 ```
 
-## Example
+## Examples
 For an example of using this tool and its features, check out the following
-project:
+projects:
 
-* [ocaml-pci][4]
+* [simonjbeaumont/ocaml-pci][4]
+* [djs55/ocaml-9p][5]
+* [xapi-project/message-switch][6]
 
 [1]: https://coveralls.io
 [2]: http://oasis.forge.ocamlcore.org/
 [3]: http://bisect.x9c.fr/
 [4]: https://github.com/simonjbeaumont/ocaml-pci
+[5]: https://github.com/djs55/ocaml-9p
+[6]: https://github.com/xapi-project/message-switch
+
