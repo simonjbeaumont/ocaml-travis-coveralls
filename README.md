@@ -55,6 +55,43 @@ file "lib/ffi_generated.ml" [ regexp ".*" ];
 file "lib/ffi_generated_types.ml" [ regexp ".*" ];
 ```
 
+## Local usage
+
+You can also use this script to see your coverage metrics locally. The script
+detects that it is not running on Travis and instead outputs the information to
+stdout and also generates a HTML report.
+
+```sh
+$ wget https://raw.githubusercontent.com/simonjbeaumont/ocaml-travis-coveralls/master/travis-coveralls.sh
+$ bash travis-coveralls.sh
+...
+Ran: 27 tests in: 0.01 seconds.
+OK
+$TRAVIS not set; displaying results of bisect-report...
+...[ snip ]...
+File 'lib/request.ml':
+ - 'binding' points: 77/124 (62.10%)
+ - 'sequence' points: 2/2 (100.00%)
+ - 'for' points: none
+ - 'if/then' points: 3/6 (50.00%)
+...[ snip ]...
+Summary:
+ - 'binding' points: 328/637 (51.49%)
+ - 'sequence' points: 34/94 (36.17%)
+ - 'for' points: 1/1 (100.00%)
+ - 'if/then' points: 29/85 (34.12%)
+ - 'try' points: 1/1 (100.00%)
+ - 'while' points: none
+ - 'match/function' points: 124/180 (68.89%)
+ - 'class expression' points: none
+ - 'class initializer' points: none
+ - 'class method' points: none
+ - 'class value' points: none
+ - 'toplevel expression' points: 1/1 (100.00%)
+ - 'lazy operator' points: 4/4 (100.00%)
+ - total: 522/1003 (52.04%)
+```
+
 ## Examples
 For an example of using this tool and its features, check out the following
 projects:
