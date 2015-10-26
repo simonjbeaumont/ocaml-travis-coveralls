@@ -92,6 +92,18 @@ Summary:
  - total: 522/1003 (52.04%)
 ```
 
+The following Makefile snippet may come in useful to provide a `make coverage`
+target that can be run locally:
+
+```make
+travis-coveralls.sh:
+	wget https://raw.githubusercontent.com/simonjbeaumont/ocaml-travis-coveralls/master/$@
+
+coverage: travis-coveralls.sh
+	bash $<
+```
+
+
 ## Examples
 For an example of using this tool and its features, check out the following
 projects:
