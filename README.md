@@ -111,6 +111,8 @@ projects:
 * [simonjbeaumont/ocaml-pci][4]
 * [djs55/ocaml-9p][5]
 * [xapi-project/message-switch][6]
+* [mirage/mirage-block-volume][7]
+* [johnelse/ocaml-irc-client][8]
 
 [1]: https://coveralls.io
 [2]: http://oasis.forge.ocamlcore.org/
@@ -118,4 +120,5 @@ projects:
 [4]: https://github.com/simonjbeaumont/ocaml-pci
 [5]: https://github.com/djs55/ocaml-9p
 [6]: https://github.com/xapi-project/message-switch
-
+[7]: https://github.com/mirage/mirage-block-volume
+[8]: https://github.com/johnelse/ocaml-irc-client
