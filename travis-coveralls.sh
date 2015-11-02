@@ -42,7 +42,7 @@ fi
 
 eval ${CONFIGURE}
 eval ${BUILD}
-find . -name 'bisect*' | xargs rm -f
+find . -name 'bisect*' -delete
 eval ${TEST}
 
 find . -name 'bisect*' -exec mv {} . \;
