@@ -47,9 +47,12 @@ eval ${TEST}
 
 find . -name 'bisect*' -exec mv {} . \;
 
-bisect-ppx-report bisect*.out -I _build -text report
-bisect-ppx-report bisect*.out -I _build -summary-only -text summary
-(cd _build; bisect-ppx-report ../bisect*.out -html ../report-html)
+DIRECTORIES=`find . -type d`
+printf -v INCLUDES " -I %s" $DIRECTORIES
+
+bisect-ppx-report bisect*.out $INCLUDES -text report
+bisect-ppx-report bisect*.out $INCLUDES -summary-only -text summary
+bisect-ppx-report bisect*.out $INCLUDES -html report-html
 
 if [ -n "$TRAVIS" ]; then
   echo "\$TRAVIS set; running ocveralls and sending to coveralls.io..."
