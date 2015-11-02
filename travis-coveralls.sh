@@ -3,6 +3,15 @@ set -e
 # Make sure we're not echoing any sensitive data
 set +x
 
+function instrument_oasis {
+  sed -i 's/\(BuildDepends:\s*\)\(.*\)/\1bisect_ppx, \2/' _oasis
+  if [ -f ../.coverage.excludes ]; then
+    ln -s ../.coverage.excludes
+    sed -i '/ByteOpt:/ s/$/ -ppxopt bisect_ppx,"-exclude-file ..\/.coverage.excludes"/' _oasis
+    sed -i '/NativeOpt:/ s/$/ -ppxopt bisect_ppx,"-exclude-file ..\/.coverage.excludes"/' _oasis
+  fi
+}
+
 CONFIGURE=${COV_CONF:-'echo "COV_CONF unset, assuming: <noop>"'}
 BUILD=${COV_BUILD:-'echo "COV_BUILD unset, assuming: make"; make'}
 TEST=${COV_TEST:-'echo "COV_TEST unset, assuming: make test"; make test'}
@@ -18,13 +27,7 @@ $(which cp) -r ../* .
 eval `opam config env`
 opam install -y bisect_ppx oasis ocveralls
 
-sed -i 's/\(BuildDepends:\s*\)\(.*\)/\1bisect_ppx, \2/' _oasis
-if [ -f ../.coverage.excludes ]; then
-  ln -s ../.coverage.excludes
-  sed -i '/ByteOpt:/ s/$/ -ppxopt bisect_ppx,"-exclude-file ..\/.coverage.excludes"/' _oasis
-  sed -i '/NativeOpt:/ s/$/ -ppxopt bisect_ppx,"-exclude-file ..\/.coverage.excludes"/' _oasis
-fi
-oasis setup
+instrument_oasis
 
 eval ${CONFIGURE}
 eval ${BUILD}
