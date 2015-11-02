@@ -12,6 +12,10 @@ function instrument_oasis {
   fi
 }
 
+function instrument_omake {
+  find . -name OMakefile -exec sed -i -e 's/\(OCAMLPACKS\s\++\?=\)/\1 bisect_ppx/' {} \;
+}
+
 CONFIGURE=${COV_CONF:-'echo "COV_CONF unset, assuming: <noop>"'}
 BUILD=${COV_BUILD:-'echo "COV_BUILD unset, assuming: make"; make'}
 TEST=${COV_TEST:-'echo "COV_TEST unset, assuming: make test"; make test'}
