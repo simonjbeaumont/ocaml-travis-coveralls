@@ -31,7 +31,14 @@ $(which cp) -r ../* .
 eval `opam config env`
 opam install -y bisect_ppx oasis ocveralls
 
-instrument_oasis
+if [ -f _oasis ] ; then
+  instrument_oasis
+elif [ -f OMakefile ] ; then
+  instrument_omake
+else
+  echo Cannot instrument this build
+  exit 1
+fi
 
 eval ${CONFIGURE}
 eval ${BUILD}
