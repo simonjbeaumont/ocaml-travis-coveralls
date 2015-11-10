@@ -1,0 +1,20 @@
+OASISFormat:    0.4
+Name:           coverage_test
+Version:        0.0.1
+Synopsis:       Dummy project to test ocaml-travis-coveralls
+Authors:        Si Beaumont
+License:        MIT
+Plugins:        DevFiles (0.4), META (0.4)
+BuildTools:     ocamlbuild
+
+Executable coverage_test
+  Build$:         flag(tests)
+  Path:           .
+  MainIs:         coverage_test.ml
+  CompiledObject: native
+  BuildDepends:   bigarray,
+                  stdlib,
+                  unix
+
+Test coverage_test
+  Command: $coverage_test

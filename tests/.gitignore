@@ -1,0 +1,7 @@
+_tags
+configure
+myocamlbuild.ml
+setup.*
+_build/
+travis-coveralls.sh
+coverage_test.native
