@@ -106,19 +106,28 @@ coverage: travis-coveralls.sh
 
 ## Examples
 For an example of using this tool and its features, check out the following
-projects:
+Github users' projects:
 
-* [simonjbeaumont/ocaml-pci][4]
-* [djs55/ocaml-9p][5]
-* [xapi-project/message-switch][6]
-* [mirage/mirage-block-volume][7]
-* [johnelse/ocaml-irc-client][8]
+* [xapi-project][10]: [message-switch][11], [ocaml-crc][12], [xenvm][13];
+* [mirage][20]: [mirage-block-volume][21];
+* [djs55][30]: [ocaml-9p][31];
+* [johnelse][40]: [ocaml-irc-client][41];
+* [simonjbeaumont][50]: [ocaml-pci][51].
 
 [1]: https://coveralls.io
 [2]: http://oasis.forge.ocamlcore.org/
 [3]: http://bisect.x9c.fr/
-[4]: https://github.com/simonjbeaumont/ocaml-pci
-[5]: https://github.com/djs55/ocaml-9p
-[6]: https://github.com/xapi-project/message-switch
-[7]: https://github.com/mirage/mirage-block-volume
-[8]: https://github.com/johnelse/ocaml-irc-client
+
+[10]: https://github.com/xapi-project
+[11]: https://github.com/xapi-project/message-switch
+[12]: https://github.com/xapi-project/ocaml-crc
+[13]: https://github.com/xapi-project/xenvm
+[20]: https://github.com/mirage
+[21]: https://github.com/mirage/mirage-block-volume
+[30]: https://github.com/djs55
+[31]: https://github.com/djs55/ocaml-9p
+[40]: https://github.com/johnelse
+[41]: https://github.com/johnelse/ocaml-irc-client
+[50]: https://github.com/simonjbeaumont
+[51]: https://github.com/simonjbeaumont/ocaml-pci
+[52]: https://github.com/simonjbeaumont/ocaml-flock
