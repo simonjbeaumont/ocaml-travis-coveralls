@@ -18,7 +18,7 @@ $(which cp) -r ../* .
 eval `opam config env`
 opam install -y bisect_ppx oasis ocveralls
 
-sed -i '/BuildDepends:/ s/$/, bisect_ppx/' _oasis
+sed -i 's/\(BuildDepends:\s*\)\(.*\)/\1bisect_ppx, \2/' _oasis
 if [ -f ../.coverage.excludes ]; then
   ln -s ../.coverage.excludes
   sed -i '/ByteOpt:/ s/$/ -ppxopt bisect_ppx,"-exclude-file ..\/.coverage.excludes"/' _oasis
