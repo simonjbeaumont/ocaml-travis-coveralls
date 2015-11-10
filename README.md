@@ -18,6 +18,7 @@ script: ... && bash travis-coveralls.sh
 
 ## Prerequisites
 
+0. Your project builds with OCaml >= 4.02;
 0. Your project is enabled on [Coveralls.io][1]; and
 0. Your project is configured using [Oasis][2].
 
