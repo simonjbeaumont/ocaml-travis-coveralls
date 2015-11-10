@@ -1,7 +1,10 @@
-#!/bin/bash
+###############################################################################
+# THIS IS FOR INTERNAL SELF-TESTING, CONSULT THE README FOR USAGE
+###############################################################################
 set -ex
-
-export COV_CONF="oasis setup"
-export COV_KEEP="yes"
-
+cd tests
+# Test that uploading to Coveralls works...
 make coverage
+# Test that local coverage reporting works...
+unset TRAVIS
+make coverage | grep -- '- total: 1/2 (50.00%)'
