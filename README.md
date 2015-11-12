@@ -1,4 +1,4 @@
-# Push your coverage metrics to Coveralls.io from Travis-ci
+# Push OCaml coverage metrics to Coveralls from Travis [![Build Status](https://travis-ci.org/simonjbeaumont/ocaml-travis-coveralls.svg?branch=master)](https://travis-ci.org/simonjbeaumont/ocaml-travis-coveralls)
 
 ## Usage
 
