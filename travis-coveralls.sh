@@ -10,6 +10,7 @@ function instrument_oasis {
     sed -i '/ByteOpt:/ s/$/ -ppxopt bisect_ppx,"-exclude-file ..\/.coverage.excludes"/' _oasis
     sed -i '/NativeOpt:/ s/$/ -ppxopt bisect_ppx,"-exclude-file ..\/.coverage.excludes"/' _oasis
   fi
+  oasis setup
 }
 
 function instrument_omake {
