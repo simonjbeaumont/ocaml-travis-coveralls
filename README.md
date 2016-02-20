@@ -22,8 +22,8 @@ script: ... && bash travis-coveralls.sh
 0. Your project is enabled on [Coveralls.io][1]; and
 0. Your project is configured using [Oasis][2].
 
-The dependency on Oasis allows this tool to link in [Bisect][3] (the OCaml tool
-for collecting coverage metrics) in a predictable way.
+The dependency on Oasis allows this tool to link in [Bisect_ppx][3] (the OCaml
+tool for collecting coverage metrics) in a predictable way.
 
 ## Configuration
 You can configure the commands used to build and what commands are measured by
@@ -117,7 +117,7 @@ Github users' projects:
 
 [1]: https://coveralls.io
 [2]: http://oasis.forge.ocamlcore.org/
-[3]: http://bisect.x9c.fr/
+[3]: https://github.com/rleonid/bisect_ppx
 
 [10]: https://github.com/xapi-project
 [11]: https://github.com/xapi-project/message-switch
