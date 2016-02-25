@@ -30,7 +30,7 @@ if [ -z "$KEEP" ]; then trap "popd; rm -rf $COVERAGE_DIR" EXIT; fi
 $(which cp) -r ../* .
 
 eval `opam config env`
-opam install -y bisect_ppx oasis ocveralls
+opam install -y bisect_ppx.1.0.0 oasis ocveralls
 
 if [ -f _oasis ] ; then
   instrument_oasis
