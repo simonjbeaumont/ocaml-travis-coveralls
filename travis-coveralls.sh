@@ -30,7 +30,7 @@ if [ -z "$KEEP" ]; then trap "popd; rm -rf $COVERAGE_DIR" EXIT; fi
 $(which cp) -r ../* .
 
 eval `opam config env`
-opam install -y bisect bisect_ppx oasis ocveralls
+opam install -y bisect_ppx.1.0.0 oasis ocveralls
 
 if [ -f _oasis ] ; then
   instrument_oasis
@@ -51,15 +51,15 @@ find . -name 'bisect*' -exec mv {} . \;
 DIRECTORIES=`find . -type d`
 printf -v INCLUDES " -I %s" $DIRECTORIES
 
-bisect-report bisect*.out $INCLUDES -text report
-bisect-report bisect*.out $INCLUDES -summary-only -text summary
-bisect-report bisect*.out $INCLUDES -html report-html
+bisect-ppx-report bisect*.out $INCLUDES -text report
+bisect-ppx-report bisect*.out $INCLUDES -summary-only -text summary
+bisect-ppx-report bisect*.out $INCLUDES -html report-html
 
 if [ -n "$TRAVIS" ]; then
   echo "\$TRAVIS set; running ocveralls and sending to coveralls.io..."
   ocveralls --prefix _build bisect*.out --send
 else
-  echo "\$TRAVIS not set; displaying results of bisect-report..."
+  echo "\$TRAVIS not set; displaying results of bisect-ppx-report..."
   cat report
   cat summary
 fi
