@@ -7,4 +7,4 @@ cd tests
 make coverage
 # Test that local coverage reporting works...
 unset TRAVIS
-make coverage | grep -- '- total: 1/2 (50.00%)'
+make coverage | grep -- 'Summary: 1/2 (50.00%)'
